@@ -1,0 +1,39 @@
+{% extends "./../layout/mainLayou.html" %}
+{%block "main" %}
+<div class="layui-container">
+    <div class="content">
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>卡片面板</legend>
+        </fieldset>
+        <div style="padding: 20px; background-color: #F2F2F2;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">系统信息</div>
+                        <div class="layui-card-body">
+                            <div class="device"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">卡片面板</div>
+                        <div class="layui-card-body">
+                            结合 layui 的栅格系统<br>
+                            轻松实现响应式布局
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">标题</div>
+                        <div class="layui-card-body">
+                            内容
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

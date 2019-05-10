@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.wrapper .footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.wrapper .footer .foot-bar {
+  border-top: 1px solid #e2e2e2;
+  text-align: center;
+}
+.wrapper .footer .foot-bar p {
+  line-height: 60px;
+  color: #737573;
+}

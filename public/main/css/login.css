@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.login {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+.login .layui-form .layui-form-item label {
+  line-height: 26px;
+}
+.login .layui-form .repass-link a {
+  color: #1E9FFF;
+}
+.login .layui-form .login-link a {
+  color: #FF5722;
+}
+.register {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+.register .layui-form .layui-form-item label {
+  line-height: 26px;
+}
+.register .layui-form .reg-link a {
+  color: #FF5722;
+}
+.repass {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+}
+.repass .layui-form .layui-form-item label {
+  line-height: 26px;
+}
+.repass .layui-form .reg-link a {
+  color: #1E9FFF;
+}
+.repass .layui-form .login-link a {
+  color: #FF5722;
+}
+.login-class .layui-layer-btn-c {
+  padding-bottom: 32px;
+}
+.login-class .layui-layer-btn-c a {
+  height: 36px;
+  line-height: 36px;
+  border-color: #1E9FFF;
+  background-color: #1E9FFF;
+  color: #fff;
+}
+.register-class .layui-layer-btn-c {
+  padding-bottom: 32px;
+}
+.register-class .layui-layer-btn-c a {
+  height: 36px;
+  line-height: 36px;
+  border-color: #FF5722;
+  background-color: #FF5722;
+  color: #fff;
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.wrapper .header .nav-bar {
+  background-color: #393D49;
+}
+.wrapper .header .nav-bar .login-btn {
+  padding: 10px 0;
+}
+.wrapper .header .nav-bar .login-info {
+  color: #fff;
+  line-height: 60px;
+}
+.wrapper .header .nav-bar .login-info a {
+  color: inherit;
+}

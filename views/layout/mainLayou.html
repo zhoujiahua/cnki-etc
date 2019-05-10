@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    {% block "title" %}
+    <title>前台模版</title>
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="./public/main/css/base.css">
+    <link rel="stylesheet" type="text/css" href="./public/lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="./public/lib/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./public/main/css/header.css">
+    <link rel="stylesheet" type="text/css" href="./public/main/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="./public/main/css/layout.css">
+    <link rel="stylesheet" type="text/css" href="./public/main/css/login.css">
+    <link rel="stylesheet" type="text/css" href="./public/main/css/reset.css">
+    {% block "style" %}{% endblock %}
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <div class="nav-bar">
+                <div class="layui-container">
+                    <div class="layui-row">
+                        <div class="layui-col-md9 layui-col-xs12 ">
+                            <ul class="menu-bar layui-nav">
+                                <li class="layui-nav-item layui-this"><a href="javascript:;">首页</a></li>
+                                <li class="layui-nav-item"><a href="javascript:;">资讯</a></li>
+                                <li class="layui-nav-item"><a href="javascript:;">文章</a></li>
+                                <li class="layui-nav-item"><a href="javascript:;">关于</a></li>
+                            </ul>
+                        </div>
+                        <div class="layui-col-md3  layui-col-xs12  clearfix">
+                            {% if userInfo._id %}
+                            <div class="login-info login-tbar fr">
+                                <a href="javascript:;" id="loginUser">
+                                    欢迎：<span data-id="{{ userInfo.userid }}">{{ userInfo.username }}</span>
+                                </a>
+                                {% if userInfo.isAdmin %}
+                                <span>&nbsp;|&nbsp;</span>
+                                <a href="/admin">后台管理</a>
+                                {% endif %}
+                                <span>&nbsp;|&nbsp;</span>
+                                <a href="javascript:;" id="loginOut">注销</a>
+                            </div>
+                            {% else %}
+                            <div class="login-btn login-tbar fr">
+                                <a href="javascript:;" class="layui-btn layui-btn-normal" id="loginBnt">登录</a>
+                                <a href="javascript:;" class="layui-btn layui-btn-danger" id="registerBtn">注册</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main -->
+        <div class="main">
+            {% block "main" %}{% endblock %}
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <div class="foot-bar">
+                <p><a href="/">知网陕西分公司</a> 2019 © <a href="/">CNKI.NET</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 登录面板 -->
+    <script type="text/html" id="loginHtml">
+        <div class="login">
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <label>账户：</label>
+                    <div>
+                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入账户"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label>密码：</label>
+                    <div>
+                        <input type="password" name="password" placeholder="请输入密码" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item clearfix">
+                    <div class="repass-link layui-inline fl">
+                        <a href="javascript:;">忘记密码</a>
+                    </div>
+                    <div class="login-link layui-inline fr">
+                        <a href="javascript:;">没有账户去注册 &gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- 注册面板 -->
+    <script type="text/html" id="registerHtml">
+        <div class="register">
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <label>账户名称：</label>
+                    <div>
+                        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="请输入账户"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label>设置密码：</label>
+                    <div>
+                        <input type="password" name="password" placeholder="请输入密码" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label>确认密码：</label>
+                    <div>
+                        <input type="password" name="password2" placeholder="请输入密码" autocomplete="off"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label>邮箱：</label>
+                    <div>
+                        <input type="text" name="email" placeholder="邮箱" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item clearfix">
+                    <div class="reg-link layui-inline fr">
+                        <a href="javascript:;">已有账户去登录 &gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- 找回密码 -->
+    <script type="text/html" id="repassHtml">
+        <div class="repass">
+            <div class="layui-form">
+                <div class="layui-form-item">
+                    <label>输入邮箱：</label>
+                    <div>
+                        <input type="text" name="reemail" lay-verify="title" autocomplete="off" placeholder="请输入邮箱"
+                            class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item clearfix">
+                    <div class="reg-link layui-inline fl">
+                        <a href="javascript:;">已有账户去登录 </a>
+                    </div>
+                    <div class="login-link layui-inline fr">
+                        <a href="javascript:;">没有账户去注册 &gt;&gt;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <!-- js -->
+    <script src="./public/lib/layui/layui.js"></script>
+    <script src="./public/main/js/login.js"></script>
+    <script src="./public/main/js/layout.js"></script>
+    <script src="./public/layout/loginout.js"></script>
+    {% block "script" %}{% endblock %}
+</body>
+
+</html>

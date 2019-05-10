@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>{{ error.title }}</title>
+    <link rel="stylesheet" type="text/css" href="./../public/lib/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./../public/lib/font-awesome/css/font-awesome.css">
+
+    <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+        (function () {
+            //页面跳转
+            var url = window.location.href,
+                urlHt = url.match(/^[https:|http:]+\/\//g)[0] + window.location.host;
+            var timer = setTimeout(function () {
+                clearTimeout(timer);
+                window.location.href = urlHt;
+            }, 3000);
+        }())
+    </script>
+</head>
+
+<body>
+    <div class="layui-container">
+        <h1>{{ error.status }}</h1>
+        <h2>{{ error.desc }}</h2>
+        <div>{{ message }}</div>
+        <div>
+            <a href="/">返回首页</a>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="./../public/lib/layui/layui.js"></script>
+</body>
+
+</html>

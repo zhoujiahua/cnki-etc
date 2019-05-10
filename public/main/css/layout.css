@@ -1,0 +1,25 @@
+@charset "UTF-8";
+@media screen and (max-width: 768px) {
+  .menu-bar {
+    display: none;
+  }
+  .main {
+    padding-bottom: 0;
+  }
+  .foot-bar {
+    display: none;
+  }
+}
+@media screen and (max-width: 450px) {
+  .login .layui-form-item .layui-inline,
+  .register .layui-form-item .layui-inline,
+  .repass .layui-form-item .layui-inline {
+    display: inline-block;
+    margin-right: 0;
+    margin-bottom: 0;
+    clear: initial;
+  }
+}
+.wrapper .main {
+  background-color: #fff;
+}

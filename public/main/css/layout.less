@@ -1,0 +1,39 @@
+@import "comm";
+//主要样式
+
+@media screen and (max-width:768px) {
+    .menu-bar {
+        display: none;
+    }
+
+    .main {
+        padding-bottom: 0;
+    }
+
+    .foot-bar {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .login,
+    .register,
+    .repass {
+        .layui-form-item {
+            .layui-inline {
+                display: inline-block;
+                margin-right: 0;
+                margin-bottom: 0;
+                clear: initial;
+            }
+        }
+    }
+
+}
+
+.wrapper {
+    .main {
+        background-color: @bgc;
+    }
+}
