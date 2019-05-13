@@ -5,7 +5,9 @@ const passport = require("passport");
 const jwt = require("jsonwebtoken");
 const avatar = require("gravatar");
 const router = express.Router();
+const email = require("./../comm/nodemailer");
 const keys = require("./../config/keys");
+
 
 //统一验证信息
 let msgData;
@@ -155,6 +157,22 @@ router.post("/register", (req, res, next) => {
 //用户注销
 router.get("/loginout", (req, res, next) => {
     res.send("success");
+})
+
+//邮件发送
+router.post("/email", (req, res, next) => {
+    let r = req.body;
+    const emailConfig = {
+        from: "<blooocn@163.com>",
+        to: r.email,
+        secure: true,
+        subject: "Hello World!", //主题
+        // text: "How are you! 123456", //文本消息
+        html: `<p>Very Good!您当前的验证码是：${123456} 请妥善保管！</p>` //html消息
+    }
+    email(emailConfig).then((info) => {
+        res.json(info);
+    }).catch(console.error)
 })
 
 module.exports = router;

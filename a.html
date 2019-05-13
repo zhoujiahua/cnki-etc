@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="box">Document</title>
+</head>
+
+<body>
+    <h1 class="box"></h1>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.js"></script>
+    <script>
+        $(function () {
+            // var time = 5,
+            //     timer = null;
+            // $(".box").text(time);
+            // timer = setInterval(function () {
+            //     $(".box").text(--time);
+            //     if (time == 0) {
+            //         clearInterval(timer);
+            //     }
+            // }, 1000)
+
+            async function a() {
+                let obj = await {
+                    name: "tom"
+                }
+                // return {name:"tom"}
+                return obj;
+            }
+
+            async function b() {
+                // console.log("222");
+                return {
+                    name: "jarry"
+                }
+            }
+
+            console.log(a())
+            console.log(b())
+
+
+            let c = function () {
+                return new Promise(function (resolved, reject) {
+                    setTimeout(function () {
+                        resolved({
+                            name: "Hello",
+                            age: "20",
+                            title:"你好",
+                            email:"abc@com.com"
+                        });
+                    })
+
+                })
+            }
+            console.log(c());
+            c().then((info) => {
+                let {name,age,title,email} = info
+                console.log(name)
+               
+
+            }).catch((err) => {
+                console.log(err)
+            })
+
+        })
+    </script>
+</body>
+
+</html>

@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 const swig = require("swig");
 const comm = require("./comm/comm");
+const md5 = require("md5");
 const app = express();
 
 //使用body-parser
@@ -13,13 +14,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 //node 允许跨域请求
-app.all('*', function(req, res, next) {
+app.all('*', function (req, res, next) {
     console.log(req.method);
     res.header("Access-Control-Allow-Origin", "*");
     res.header('Access-Control-Allow-Headers', 'Content-type');
     res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS,PATCH");
-    res.header('Access-Control-Max-Age',1728000);//预请求缓存20天
-    next();  
+    res.header('Access-Control-Max-Age', 1728000); //预请求缓存20天
+    next();
 });
 
 //引入模块文件
@@ -125,6 +126,3 @@ mongoose.connect(comm.cnkietcDB, {
         });
     }
 });
-
-
-
